@@ -12,7 +12,7 @@ public class FinanceServiceTests
     [SetUp]
     public void Setup()
     {
-        // Arrange: создаём тестовые данные
+        // Arrange
         _wallet1 = new Wallet("Кошелёк 1", "RUB", 1000m);
         _wallet1.AddTransaction(new Transaction(new DateTime(2025, 5, 1), 500, TransactionType.Income, "Зарплата"));
         _wallet1.AddTransaction(new Transaction(new DateTime(2025, 5, 3), 200, TransactionType.Expense, "Еда"));
