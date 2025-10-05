@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceApp", "FinanceApp\FinanceApp.csproj", "{3A17E5F5-A857-4368-BCA0-F147D2C098FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceApp.Tests", "FinanceApp.Tests\FinanceApp.Tests.csproj", "{4502997C-1017-4F21-8A86-E111E4F467FC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3A17E5F5-A857-4368-BCA0-F147D2C098FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A17E5F5-A857-4368-BCA0-F147D2C098FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A17E5F5-A857-4368-BCA0-F147D2C098FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A17E5F5-A857-4368-BCA0-F147D2C098FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4502997C-1017-4F21-8A86-E111E4F467FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4502997C-1017-4F21-8A86-E111E4F467FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4502997C-1017-4F21-8A86-E111E4F467FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4502997C-1017-4F21-8A86-E111E4F467FC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
