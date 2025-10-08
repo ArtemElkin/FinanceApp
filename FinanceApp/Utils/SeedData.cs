@@ -4,22 +4,31 @@ namespace FinanceApp.Utils
 {
     public static class SeedData
     {
-        public static List<Wallet> CreateSampleWallets()
+        public static List<Wallet> CreateSampleWallets(int transactionsCountPerWallet)
         {
             var w1 = new Wallet("Основной кошелёк", "RUB", 10000m);
-            var w2 = new Wallet("Запасной кошелёк", "USD", 200m);
-
-            w1.AddTransaction(new Transaction(new DateTime(2025, 9, 1), 111m, TransactionType.Income, "Зарплата"));
-            w1.AddTransaction(new Transaction(new DateTime(2025, 9, 2), 222m, TransactionType.Expense, "Продукты"));
-            w1.AddTransaction(new Transaction(new DateTime(2025, 9, 3), 333m, TransactionType.Expense, "Такси"));
-            w1.AddTransaction(new Transaction(new DateTime(2025, 9, 4), 444m, TransactionType.Expense, "Ресторан"));
-            w1.AddTransaction(new Transaction(new DateTime(2025, 8, 5), 555m, TransactionType.Expense, "Ремонт"));
-
-            w2.AddTransaction(new Transaction(new DateTime(2025, 9, 6), 666m, TransactionType.Income, "Фриланс"));
-            w2.AddTransaction(new Transaction(new DateTime(2025, 9, 7), 777m, TransactionType.Expense, "Подписка"));
-            w2.AddTransaction(new Transaction(new DateTime(2025, 9, 8), 888m, TransactionType.Income, "Возврат"));
-
-            return new List<Wallet> { w1, w2 };
+            var w2 = new Wallet("Запасной кошелёк", "USD", 20000m);
+            List<Wallet> wallets = [w1, w2];
+            Random rnd = new Random();
+            foreach (var wallet in wallets)
+            {
+                for (int i = 0; i < transactionsCountPerWallet; i++)
+                {
+                    DateTime randomDate = new DateTime(rnd.Next(2024, 2026), rnd.Next(1, 13), rnd.Next(1, 29));
+                    decimal randomAmount = rnd.Next(1, 10000);
+                    TransactionType randomTransactionType = rnd.NextSingle() > 0.5f ? TransactionType.Expense : TransactionType.Income;
+                    Transaction transaction = new Transaction(randomDate, randomAmount, randomTransactionType, $"Generated N={i}");
+                    try
+                    {
+                        wallet.AddTransaction(transaction);
+                    }
+                    catch (InvalidOperationException)
+                    {
+                        Console.WriteLine("Недостаточно средств для совершения операции:\n" + transaction.ToString());
+                    }
+                }
+            }
+            return wallets;
         }
     }
 }

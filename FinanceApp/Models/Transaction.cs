@@ -9,7 +9,7 @@ namespace FinanceApp.Models
     {
         public Guid Id { get; init; } = Guid.NewGuid();
         public DateTime Date { get; init; }
-        public decimal Amount { get; init; } // positive value
+        public decimal Amount { get; init; }
         public TransactionType Type { get; init; }
         public string? Description { get; init; }
 

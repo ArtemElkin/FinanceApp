@@ -10,7 +10,7 @@ internal static class Program
         Console.OutputEncoding = System.Text.Encoding.UTF8;
         Console.WriteLine("Finance App\n");
 
-        var wallets = SeedData.CreateSampleWallets();
+        var wallets = SeedData.CreateSampleWallets(10000);
         var service = new FinanceService(wallets);
         
         Console.Write("Введите год: ");
